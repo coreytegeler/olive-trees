@@ -1,0 +1,31 @@
+<?php
+snippet('header');
+echo '<div class="content">';
+	echo '<div class="full">';
+		echo '<div class="column">';
+			echo '<div class="inner">';
+				echo '<div class="bio">';
+					echo '<h3>Bio</h3>';
+					echo $page->bio()->kirbytext();
+				echo '</div>';
+			echo '</div>';
+		echo '</div>';
+		echo '<div class="column">';
+			echo '<div class="inner">';
+				echo '<div class="statement">';;
+					echo '<h3>Statement</h3>';
+					echo $page->statement()->kirbytext();
+				echo '</div>';
+				echo '<div class="contact">';
+					echo '<h3>Contact</h3>';
+					echo $page->contact()->kirbytext();
+				echo '</div>';
+				echo '<div class="cv">';
+					echo '<a href="' . $page->cv() . '"><h3>Download CV</h3></a>';
+				echo '</div>';
+			echo '</div>';
+		echo '</div>';
+	echo '</div>';
+echo '</div>';
+snippet('footer');
+?>

@@ -1,0 +1,226 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.2em; }
+
+a {
+  color: black;
+  text-decoration: none; }
+  a:hover {
+    color: blue; }
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2em;
+  font-weight: 100;
+  margin: 0; }
+
+h2 {
+  font-size: 2em;
+  line-height: 1.2em;
+  font-weight: 900;
+  margin: 0; }
+
+h3 {
+  font-size: 1.3em;
+  line-height: 1.3em;
+  margin: 0;
+  font-weight: 400; }
+
+h4 {
+  font-size: 1em;
+  line-height: 1.2em;
+  margin: 0;
+  font-weight: 400; }
+
+main {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow-x: hidden; }
+  main.artwork {
+    overflow: hidden; }
+
+header {
+  height: 5em;
+  display: flex; }
+  header .name {
+    padding: 0 2em;
+    display: flex;
+    align-items: center; }
+    header .name h1 {
+      line-height: .9em; }
+  header nav {
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    user-select: none; }
+
+.links {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+  padding: 0.5em 0 0 0; }
+  .links.about {
+    padding: 0.5em 0 0 0; }
+  .links.filters {
+    padding: 0 0 0.5em 0;
+    align-items: flex-end; }
+    .links.filters a {
+      opacity: .5; }
+      .links.filters a h3, .links.filters a h4 {
+        float: left; }
+      .links.filters a.selected {
+        opacity: 1; }
+      .links.filters a:hover {
+        cursor: pointer; }
+  .links a {
+    float: left;
+    display: table;
+    margin: 0 1em 0 0; }
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex; }
+  .content .inner {
+    width: 100%;
+    max-width: 45em;
+    display: table;
+    padding: 2em 0;
+    margin: auto; }
+    .content .inner h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 4em;
+      font-weight: 100; }
+    .content .inner .meta {
+      width: 100%;
+      font-size: 1em;
+      line-height: 1.2em;
+      text-align: center; }
+    .content .inner .intro {
+      width: 100%;
+      font-size: 1.3em;
+      line-height: 1.3em; }
+    .content .inner .body {
+      width: 100%;
+      font-size: 1.3em;
+      line-height: 1.3em; }
+    .content .inner .date {
+      padding: 2em; }
+      .content .inner .date h2.month {
+        text-align: center;
+        font-weight: 100; }
+  .content .full {
+    width: 100%;
+    max-width: 100%;
+    margin: 2em auto; }
+    .content .full .column {
+      width: 50%;
+      float: left; }
+      .content .full .column .inner {
+        width: calc(100% - 4em);
+        max-width: 768px;
+        display: table;
+        margin: auto 2em;
+        font-size: 1.3em;
+        line-height: 1.3em; }
+        .content .full .column .inner h3 {
+          font-weight: 100; }
+        .content .full .column .inner p {
+          margin-top: 0; }
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  display: table;
+  margin: auto;
+  padding: 0;
+  position: relative;
+  overflow: visible; }
+  .carousel[data-direction="left"] .slides {
+    left: .25em; }
+  .carousel[data-direction="right"] .slides {
+    left: -.25em; }
+  .carousel .slides {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: left 200ms cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .carousel .slide {
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    float: left; }
+    .carousel .slide figure {
+      margin: 0; }
+    .carousel .slide img {
+      width: 100%; }
+    .carousel .slide .scroll {
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto; }
+    .carousel .slide.intro {
+      width: 100%;
+      height: 100%; }
+      .carousel .slide.intro .scroll {
+        cursor: default; }
+    .carousel .slide .caption {
+      width: calc(100% - 4em);
+      padding: 2em;
+      display: table;
+      margin: 2em auto 0 auto;
+      color: black;
+      font-size: 1em;
+      line-height: 1.2em; }
+      .carousel .slide .caption .inner {
+        width: 100%;
+        max-width: 768px;
+        max-width: 768px;
+        display: table;
+        margin: auto;
+        text-align: center; }
+  .carousel .arrow {
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 100; }
+    .carousel .arrow.left {
+      left: 0; }
+      .carousel .arrow.left:hover {
+        cursor: w-resize; }
+    .carousel .arrow.right {
+      right: 0; }
+      .carousel .arrow.right:hover {
+        cursor: e-resize; }
+
+footer {
+  width: 100%; }
+  footer .inner {
+    width: 80%;
+    max-width: 45em;
+    display: table;
+    margin: 2em auto; }
+    footer .inner ul {
+      flex-direction: row;
+      align-content: center; }
+      footer .inner ul li {
+        list-style: none;
+        margin: auto; }
+        footer .inner ul li a {
+          margin: 0; }
+    footer .inner .copyright {
+      margin: 2em 0 0 0;
+      text-align: center;
+      color: #707377; }

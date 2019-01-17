@@ -1,0 +1,12 @@
+type: pages
+headline: Slides
+parent: site.find("slides")
+size: tiny
+info: "{{ page.images.count }} image(s)"
+layout: cards
+template: slide
+empty: No slides yet
+image:
+  query: page.cover
+  cover: true
+  ratio: 5/4

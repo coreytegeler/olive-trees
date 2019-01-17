@@ -1,0 +1,22 @@
+title: Slide
+preset: page
+
+# status:
+#   draft: false
+
+pages: false
+
+fields:
+  text:
+    label: Text
+    type: textarea
+
+
+# sections:
+#   notes: sections/slides
+#   pages:
+#     type: pages
+#     create: default
+#     template:
+#       - home
+#       - default

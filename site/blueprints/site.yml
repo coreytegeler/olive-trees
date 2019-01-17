@@ -1,0 +1,30 @@
+title: Site
+
+pages:
+  template:
+    - slide
+
+columns:
+  - width: 1/2
+    sections:
+      intro:
+        type: fields
+        fields:
+          text:
+            label: Text
+            type: textarea
+      # pages:
+      #   type: pages
+      #   create: false
+      #   template:
+      #     - home
+      #     - about
+      #     - home
+      #     - default
+  - width: 1/2
+    sections:
+      slides:
+        type: pages
+        create: slide
+        template:
+          - slide
