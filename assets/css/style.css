@@ -181,7 +181,9 @@ header {
     .carousel .slide img {
       width: 100%;
       display: table;
-      margin: 1rem 0; }
+      margin: 1rem 0;
+      border: 4px solid white;
+      box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.15); }
     .carousel .slide .scroll {
       height: 100%;
       overflow-x: hidden;
