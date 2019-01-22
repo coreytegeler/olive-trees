@@ -4,37 +4,36 @@ html, body {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1em;
-  line-height: 1.2em; }
+  line-height: 1.7em;
+  font-weight: 400; }
 
 a {
   color: black;
   text-decoration: none; }
-  a:hover {
-    color: blue; }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1.2em;
-  font-weight: 100;
+  font-weight: 400;
   margin: 0; }
 
 h2 {
   font-size: 2em;
   line-height: 1.2em;
-  font-weight: 900;
+  font-weight: 400;
   margin: 0; }
 
 h3 {
   font-size: 1.3em;
   line-height: 1.3em;
-  margin: 0;
-  font-weight: 400; }
+  font-weight: 400;
+  margin: 0; }
 
 h4 {
   font-size: 1em;
-  line-height: 1.2em;
-  margin: 0;
-  font-weight: 400; }
+  line-height: 1.7em;
+  font-weight: 400;
+  margin: 0; }
 
 main {
   width: 100%;
@@ -49,6 +48,7 @@ header {
   display: flex; }
   header .name {
     padding: 0 2em;
+    margin: auto;
     display: flex;
     align-items: center; }
     header .name h1 {
@@ -86,7 +86,7 @@ header {
 
 .content {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 5em);
   display: flex; }
   .content .inner {
     width: 100%;
@@ -102,16 +102,19 @@ header {
     .content .inner .meta {
       width: 100%;
       font-size: 1em;
-      line-height: 1.2em;
+      line-height: 1.7em;
+      font-weight: 400;
       text-align: center; }
     .content .inner .intro {
       width: 100%;
       font-size: 1.3em;
-      line-height: 1.3em; }
+      line-height: 1.3em;
+      font-weight: 400; }
     .content .inner .body {
       width: 100%;
-      font-size: 1.3em;
-      line-height: 1.3em; }
+      font-size: 1em;
+      line-height: 1.7em;
+      font-weight: 400; }
     .content .inner .date {
       padding: 2em; }
       .content .inner .date h2.month {
@@ -130,7 +133,8 @@ header {
         display: table;
         margin: auto 2em;
         font-size: 1.3em;
-        line-height: 1.3em; }
+        line-height: 1.3em;
+        font-weight: 400; }
         .content .full .column .inner h3 {
           font-weight: 100; }
         .content .full .column .inner p {
@@ -159,10 +163,26 @@ header {
     height: 100%;
     position: relative;
     float: left; }
-    .carousel .slide figure {
-      margin: 0; }
+    .carousel .slide figure figcaption {
+      display: table;
+      color: black;
+      font-size: .8em;
+      line-height: 1.5em;
+      font-weight: 400;
+      font-style: italic;
+      opacity: 0;
+      transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1); }
+      .carousel .slide figure figcaption .inner {
+        width: 100%;
+        max-width: 768px;
+        display: table;
+        margin: auto; }
+    .carousel .slide figure:hover figcaption {
+      opacity: 1; }
     .carousel .slide img {
-      width: 100%; }
+      width: 100%;
+      display: table;
+      margin: 1rem 0; }
     .carousel .slide .scroll {
       height: 100%;
       overflow-x: hidden;
@@ -172,38 +192,26 @@ header {
       height: 100%; }
       .carousel .slide.intro .scroll {
         cursor: default; }
-    .carousel .slide .caption {
-      width: calc(100% - 4em);
-      padding: 2em;
-      display: table;
-      margin: 2em auto 0 auto;
-      color: black;
-      font-size: 1em;
-      line-height: 1.2em; }
-      .carousel .slide .caption .inner {
-        width: 100%;
-        max-width: 768px;
-        max-width: 768px;
-        display: table;
-        margin: auto;
-        text-align: center; }
   .carousel .arrow {
     width: 10%;
     height: 100%;
     position: absolute;
     top: 0;
-    background-size: contain;
+    background-size: 2em;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: 100; }
+    opacity: .2;
+    z-index: 100;
+    transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1); }
+    .carousel .arrow:hover {
+      opacity: 1;
+      cursor: pointer; }
     .carousel .arrow.left {
-      left: 0; }
-      .carousel .arrow.left:hover {
-        cursor: w-resize; }
+      left: 0;
+      background-image: url(./../../../assets/images/arrow-left.svg); }
     .carousel .arrow.right {
-      right: 0; }
-      .carousel .arrow.right:hover {
-        cursor: e-resize; }
+      right: 0;
+      background-image: url(./../../../assets/images/arrow-right.svg); }
 
 footer {
   width: 100%; }

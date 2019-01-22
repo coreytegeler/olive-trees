@@ -5,40 +5,45 @@ jQuery ($) ->
 		return $(window).innerWidth()
 
 	resizeCarousel = ->
-		$carousels = $('.carousel')
-		$carousels.each ->
-			$carousel = $(this)
-			$slides = $carousel.find('.slide')
-			slidesLength = $slides.length
-			$slidesWrapper = $carousel.find('.slides')
-			$currentSlide = $carousel.find('.slide.current')
-			$leftSlide = $currentSlide.prev().addClass('left')
-			$rightSlide = $currentSlide.next().addClass('right') 
-			currentIndex = $currentSlide.index()
-			left = currentIndex * -slideWidth()
-			$slidesWrapper.addClass 'static'
-			slidesWidth = slidesLength * slideWidth()
-			$slidesWrapper.css
-				width: slidesWidth
-				x: left
-			$slides.each (i, slide) ->
-				imageUrl = $(slide).find('img').attr('src')
-				if !imageUrl
-					return fixIntro(slide)
-				image = new Image
-				$slide = $(this)
-				image.onload = ->
-					width = image.width
-					height = image.height
-					ratio = width / height
-					if width >= height
-						$slide.addClass 'landscape'
-					else
-						$slide.addClass 'portrait'
-					if !parseInt($slide.css('width'))
-						$slide.css width: slideWidth()
-				console.log imageUrl
-				image.src = imageUrl
+		$carousel = $('.carousel').first()
+		$slides = $carousel.find('.slide')
+		slidesLength = $slides.length
+		$slidesWrapper = $carousel.find('.slides')
+		$currentSlide = $carousel.find('.slide.current')
+		$leftSlide = $currentSlide.prev().addClass('left')
+		$rightSlide = $currentSlide.next().addClass('right') 
+		currentIndex = $currentSlide.index()
+		left = currentIndex * -slideWidth()
+		$slidesWrapper.addClass 'static'
+		slidesWidth = slidesLength * slideWidth()
+		$slidesWrapper.css
+			width: slidesWidth
+			x: left
+		$slides.each (i, slide) ->
+			imageUrl = $(slide).find('img').attr('src')
+			if !imageUrl
+				return fixIntro(slide)
+			image = new Image
+			$slide = $(this)
+			$figure = $slide.find('figure')
+			$caption = $slide.find('figcaption')
+
+			# if $caption.length
+			# 	halfCaptionHeight = $caption.innerHeight()
+			# 	$figure.css
+			# 		paddingTop: halfCaptionHeight+'px'
+
+			image.onload = ->
+				width = image.width
+				height = image.height
+				ratio = width / height
+				if width >= height
+					$slide.addClass 'landscape'
+				else
+					$slide.addClass 'portrait'
+				if !parseInt($slide.css('width'))
+					$slide.css width: slideWidth()
+			image.src = imageUrl
 
 	fixIntro = (slide) ->
 		$slides = $(slide).parents('.slides').find('.slide')
@@ -70,17 +75,17 @@ jQuery ($) ->
 		direction = $arrow.attr('data-direction')
 		$carousel.slide(direction)
 
-	$('body').on 'click', '.carousel.loaded:not(.sliding) .slide.current', (e) ->
-		$slide = $(this)
-		$scroll = $slide.find('.scroll')
-		$carousel = $slide.parents('.carousel')
-		if $scroll.is('.bottom')
-			top = 0
-		else
-			top = $(document).height()
-		$scroll.animate
-			scrollTop: top
-		, 500
+	# $('body').on 'click', '.carousel.loaded:not(.sliding) .slide.current', (e) ->
+	# 	$slide = $(this)
+	# 	$scroll = $slide.find('.scroll')
+	# 	$carousel = $slide.parents('.carousel')
+	# 	if $scroll.is('.bottom')
+	# 		top = 0
+	# 	else
+	# 		top = $(document).height()
+	# 	$scroll.animate
+	# 		scrollTop: top
+	# 	, 500
 
 	$('.carousel .slide .scroll').scroll (e) ->
 		$scroll = $(this)

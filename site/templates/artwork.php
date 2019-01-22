@@ -25,46 +25,33 @@ echo '<div class="content">';
       echo '</div>';
       if( $slides ) {
         foreach ( $slides as $index => $slide ) {
-          $type = $slide->_fieldset();
-          if( $type == 'image' ) {
-            $image = $slide->image();
-            $image = $page->image( $image );
-            $title = $image->filename();
-            $caption = $image->caption();
-          } else if( $type == 'text' ) {
-            $text = $slide->text()->kirbytext();
-          }
-          echo '<div class="slide ' . $type . '" data-slug="' . $title . '">';
+          // $image = $slide->image();
+          // $image = $page->image( $image );
+          $title = $image->filename();
+          $caption = $image->caption();
+          $text = $slide->text()->kirbytext();
+
+          echo '<div class="slide ' . $type . '" data-index="' . $index . '">';
             echo '<div class="scroll">';
-              echo '<div class="texture"></div>';
-              if( $type == 'image' ) {
-                echo '<div class="wrap">';
-                  echo '<img src="' .  $image->url() . '"/>';
-                echo '</div>';
-                if( $caption->isNotEmpty() ) {
-                  echo '<div class="caption"><div class="inner">' . $image->caption() . '</div></div>';
-                }
-              } else if( $type == 'video' ) {
-                echo '<div class="wrap">';
-                  if( $slide->source() == 'vimeo' ) {
-                    $root = 'player.vimeo.com/video/';
-                  } else if( $slide->source() == 'youtube' ) {
-                    $root = 'www.youtube.com/embed/';
-                  }
-                  echo '<iframe src="https://' . $root . $slide->videoid() . '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-                echo '</div>';
-                if( $slide->caption()->isNotEmpty() ) {
-                  echo '<div class="caption"><div class="inner">' . $slide->caption() . '</div></div>';
-                }
-              } else if( $type == 'text' ) {
-                echo '<div class="content">';
-                  echo '<div class="inner">';
-                    echo '<div class="body">';
-                      echo $text;
-                    echo '</div>';
+
+
+              // if( $type == 'image' ) {
+              //   echo '<div class="wrap">';
+              //     echo '<img src="' .  $image->url() . '"/>';
+              //   echo '</div>';
+              //   if( $caption->isNotEmpty() ) {
+              //     echo '<div class="caption"><div class="inner">' . $image->caption() . '</div></div>';
+              //   }
+              echo '<div class="content">';
+                echo '<div class="inner">';
+                  echo '<div class="body">';
+                    echo 'TEXT';
+                    print_r( $slide->files()[0] );
+
+                    echo $text;
                   echo '</div>';
                 echo '</div>';
-              }
+              echo '</div>';
             echo '</div>';
           echo '</div>';
         }

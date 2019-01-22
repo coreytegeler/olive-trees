@@ -12,10 +12,10 @@
 </head>
 <body>
   <main class="main <?php echo $page->intendedTemplate(); ?>" role="main">
-    <!-- <header role="header"> -->
-      <!-- <a href="/" class="name"> -->
-        <!-- <h1>Kameelah Janan Rasheed</h1> -->
-      <!-- </a> -->
+    <header role="header">
+      <a href="<?= $site->url() ?>" class="name">
+        <?= $site->title() ?>
+      </a>
       <!-- <nav role="navigation"> -->
         <?php
         // echo '<div class="links">';
@@ -49,4 +49,4 @@
         // echo '</div>';
         ?>
       <!-- </nav> -->
-    <!-- </header> -->
+    </header>
