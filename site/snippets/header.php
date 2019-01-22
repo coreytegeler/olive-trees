@@ -14,7 +14,7 @@
   <main class="main <?php echo $page->intendedTemplate(); ?>" role="main">
     <header role="header">
       <a href="<?= $site->url() ?>" class="name">
-        <?= $site->title() ?>
+        <h1><?= $site->title() ?></h1>
       </a>
       <!-- <nav role="navigation"> -->
         <?php

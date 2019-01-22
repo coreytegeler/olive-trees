@@ -3,22 +3,23 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
+  color: #373634;
   font-size: 1em;
   line-height: 1.7em;
   font-weight: 400; }
 
 a {
-  color: black;
+  color: #373634;
   text-decoration: none; }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.2em;
   font-weight: 400;
   margin: 0; }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.2em;
   font-weight: 400;
   margin: 0; }
@@ -45,14 +46,13 @@ main {
 
 header {
   height: 5em;
-  display: flex; }
+  display: flex;
+  background-color: #f6f7f3; }
   header .name {
     padding: 0 2em;
     margin: auto;
     display: flex;
     align-items: center; }
-    header .name h1 {
-      line-height: .9em; }
   header nav {
     padding: 0 2em;
     display: flex;
@@ -165,7 +165,6 @@ header {
     float: left; }
     .carousel .slide figure figcaption {
       display: table;
-      color: black;
       font-size: .8em;
       line-height: 1.5em;
       font-weight: 400;
