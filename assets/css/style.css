@@ -208,10 +208,10 @@ header {
       cursor: pointer; }
     .carousel .arrow.left {
       left: 0;
-      background-image: url(./../../../assets/images/arrow-left.svg); }
+      background-image: url(./../images/arrow-left.svg); }
     .carousel .arrow.right {
       right: 0;
-      background-image: url(./../../../assets/images/arrow-right.svg); }
+      background-image: url(./../images/arrow-right.svg); }
 
 footer {
   width: 100%; }

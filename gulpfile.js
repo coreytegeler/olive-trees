@@ -23,7 +23,6 @@ var dest = {
   css: './assets/css/',
   js: './assets/js/',
   templates: './site',
-  images: '../../assets/images/'
 }
 
 gulp.task('compile-templates', function() {
@@ -47,7 +46,6 @@ gulp.task('compile-sass', function() {
     .pipe(plumber())
     .pipe(sass(options))
     .pipe(gulpif(argv.prod, rename('style.min.css')))
-    .pipe(replace('images/', dest.images))
     .pipe(gulp.dest(dest.css))
   .on('end', function() {
     log('Sass done');
@@ -57,7 +55,6 @@ gulp.task('compile-sass', function() {
     .pipe(plumber())
     .pipe(sass(options))
     .pipe(gulpif(argv.prod, rename('panel.min.css')))
-    .pipe(replace('images/', dest.images))
     .pipe(gulp.dest(dest.css))
   .on('end', function() {
     log('Sass done');
